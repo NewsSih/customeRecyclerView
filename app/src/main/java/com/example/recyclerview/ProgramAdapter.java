@@ -16,9 +16,9 @@ import androidx.recyclerview.widget.RecyclerView;
 public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ViewHolder> {
     // Declare variables to store data from the constructor
     Context context;
-    String[] programNameList;
-    String[] programDescriptionList;
-    int[] images;
+    String[] Title;
+    String[] PostedBy;
+
 
     // Create a static inner class and provide references to all the Views for each data item.
     // This is particularly useful for caching the Views within the item layout for fast access.
@@ -26,23 +26,23 @@ public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ViewHold
         // Declare member variables for all the Views in a row
         TextView rowName;
         TextView rowDescription;
-        ImageView rowImage;
+
         // Create a constructor that accepts the entire row and search the View hierarchy to find each subview
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             // Store the item subviews in member variables
             rowName = itemView.findViewById(R.id.textView1);
             rowDescription = itemView.findViewById(R.id.textView2);
-            rowImage = itemView.findViewById(R.id.imageView);
+
         }
     }
     // Provide a suitable constructor
-    public ProgramAdapter(Context context, String[] programNameList, String[] programDescriptionList, int[] images){
+    public ProgramAdapter(Context context, String[] Title, String[] PostedBy){
         // Initialize the class scope variables with values received from constructor
         this.context = context;
-        this.programNameList = programNameList;
-        this.programDescriptionList = programDescriptionList;
-        this.images = images;
+        this.Title = Title;
+        this.PostedBy =PostedBy;
+
     }
 
     // Create new views to be invoked by the layout manager
@@ -70,15 +70,15 @@ public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         // Get element from your dataset at this position and replace the contents of the View with that element
-        holder.rowName.setText(programNameList[position]);
-        holder.rowDescription.setText(programDescriptionList[position]);
-        holder.rowImage.setImageResource(images[position]);
+        holder.rowName.setText(Title[position]);
+        holder.rowDescription.setText(PostedBy[position]);
+
     }
 
     // Return the size of your dataset
     @Override
     public int getItemCount() {
-        return programNameList.length;
+        return Title.length;
     }
 }
 

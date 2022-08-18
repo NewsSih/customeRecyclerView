@@ -14,9 +14,9 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView.Adapter programAdapter;
     RecyclerView.LayoutManager layoutmanager;
     // Next, prepare your data set. Create two string arrays for program name and program description respectively.
-    String[] programNameList = {"C", "C++", "Java", "Android", "HTML5", "CSS3", "JavaScript", "jQuery", "Bootstrap", "PHP",
+    String[] programNameList = {"One", "Two", "Three", "Android", "HTML5", "CSS3", "JavaScript", "jQuery", "Bootstrap", "PHP",
             "MySQL", "CodeIgniter", "React", "NodeJS", "AngularJS", "PostgreSQL", "Python", "C#", "Wordpress", "GitHub"};
-    String[] programDescriptionList = {"C Description", "C++ Description", "Java Description",
+    String[] programDescriptionList = {"PIB Mumbai", "PIB Delhi", "PIB Chennai",
             "Android Description", "HTML5 Description",
             "CSS3 Description", "JavaScript Description", "jQuery Description",
             "Bootstrap Description", "PHP Description", "MySQL Description",
@@ -24,13 +24,6 @@ public class MainActivity extends AppCompatActivity {
             "AngularJS Description", "PostgreSQL Description", "Python Description",
             "C# Description", "Wordpress Description", "GitHub Description"};
     // Define an integer array to hold the image recourse ids
-    int[] programImages = {R.drawable.c, R.drawable.cplusplus,
-            R.drawable.java, R.drawable.android, R.drawable.html5,
-            R.drawable.css3, R.drawable.javascript, R.drawable.jquery,
-            R.drawable.bootstrap, R.drawable.php, R.drawable.mysql,
-            R.drawable.codeigniter, R.drawable.react, R.drawable.nodejs,
-            R.drawable.angularjs, R.drawable.postgresql, R.drawable.python,
-            R.drawable.csharp, R.drawable.wordpress, R.drawable.github};
 
 
 
@@ -46,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         layoutmanager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutmanager);
         // Create an instance of ProgramAdapter. Pass context and all the array elements to the constructor
-        programAdapter = new ProgramAdapter(this, programNameList, programDescriptionList, programImages);
+        programAdapter = new ProgramAdapter(this, programNameList, programDescriptionList);
         // Finally, attach the adapter with the RecyclerView
         recyclerView.setAdapter(programAdapter);
     }
